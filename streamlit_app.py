@@ -38,15 +38,12 @@ if app_mode == "Home":
         input_data = np.array([[n, p, k, temp, hum, ph, rain]])
         input_data_scaled = minmaxscaler.transform(input_data)
         input_data_scaled = standscaler.transform(input_data_scaled)
-        st.write("Input data:", input_data)  # Debugging statement
+        #st.write("Input data:", input_data)  # Debugging statement
 
-        st.write("Input data shape:", input_data_scaled.shape)
-        st.write("Input data:", input_data_scaled) 
+        
          
         # Make predictions
         prediction = model.predict(input_data_scaled)
-        st.write("Raw prediction:", prediction)  # Debugging statement
-
 
         # Display results
         crop_dict = {1: "Rice", 2: "Maize", 3: "Jute", 4: "Cotton", 5: "Coconut", 6: "Papaya", 7: "Orange",
