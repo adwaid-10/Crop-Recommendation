@@ -24,13 +24,13 @@ if app_mode == "Home":
     st.markdown("<h2 style='text-align: center; color: white;'>CROP PREDICTION USING SOIL ANALYSIS </h2>", unsafe_allow_html=True)
     st.image("Screenshot 2024-02-22 204925.png")
     st.subheader('Required Values', divider='rainbow')
-    n = st.number_input("Nitrogen:", min_value=0,step=1)
-    p = st.number_input("Phosphorus:", step=1)
-    k = st.number_input("Potassium:", step=1)
-    temp = st.number_input("Temperature:",step=1)
-    hum = st.number_input("Humidity:", step=1)
-    ph = st.number_input("pH:",step=1)
-    rain = st.number_input("Rainfall:",step=1)
+    n = st.number_input("Nitrogen:", min_value=0,max_value=150,step=1)
+    p = st.number_input("Phosphorus:", min_value=0,max_value=150, step=1)
+    k = st.number_input("Potassium:", min_value=0,max_value=210, step=1)
+    temp = st.number_input("Temperature:", min_value=0,max_value=50,step=1)
+    hum = st.number_input("Humidity:",min_value=0,max_value=100, step=1)
+    ph = st.number_input("pH:",min_value=0,max_value=14,step=1)
+    rain = st.number_input("Rainfall:",min_value=20,max_value=350,step=1)
 
     # Button for prediction
     if st.button("Predict"):
