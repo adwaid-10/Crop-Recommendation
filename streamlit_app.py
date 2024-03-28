@@ -39,6 +39,9 @@ if app_mode == "Home":
         input_data_scaled = minmaxscaler.transform(input_data)
         input_data_scaled = standscaler.transform(input_data_scaled)
         st.write("Input data:", input_data)  # Debugging statement
+
+        st.write("Input data shape:", input_data_scaled.shape)
+        st.write("Input data:", input_data_scaled) 
          
         # Make predictions
         prediction = model.predict(input_data_scaled)
